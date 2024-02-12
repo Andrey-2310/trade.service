@@ -8,7 +8,7 @@ public class CsvProcessingException extends RuntimeException {
 
     private static final String ERROR_MESSAGE = "Failed to parse CSV file: ";
 
-    public CsvProcessingException(String message) {
+    public CsvProcessingException(final String message) {
         super(ERROR_MESSAGE + message);
     }
 }

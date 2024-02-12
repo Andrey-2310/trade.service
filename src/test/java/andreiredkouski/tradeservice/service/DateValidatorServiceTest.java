@@ -17,13 +17,13 @@ public class DateValidatorServiceTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"20241101", "19970507", "19740303", "20240229"})
-    public void whenFormatIsValidShouldReturnTrue(String date) {
+    public void whenFormatIsValidShouldReturnTrue(final String date) {
         assertTrue(dateValidator.isValid(date, BASIC_ISO_DATE));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"1", "2023/10/11", "23.01.2023", "20231301", "20240230", "20230229"})
-    public void whenFormatIsInvalidShouldReturnFalse(String date) {
+    public void whenFormatIsInvalidShouldReturnFalse(final String date) {
         assertFalse(dateValidator.isValid(date, BASIC_ISO_DATE));
     }
 }

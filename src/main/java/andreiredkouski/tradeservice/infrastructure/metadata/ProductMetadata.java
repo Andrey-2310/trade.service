@@ -6,7 +6,7 @@ public enum ProductMetadata {
 
     private final String value;
 
-    ProductMetadata(String value) {
+    ProductMetadata(final String value) {
         this.value = value;
     }
 

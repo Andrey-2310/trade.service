@@ -26,7 +26,7 @@ public class TradeController {
 
     @PostMapping
     public void getTrade(@RequestParam("file") final MultipartFile file,
-                                        final HttpServletResponse response
+                         final HttpServletResponse response
     ) throws IOException {
         response.setContentType(CSV_CONTENT_TYPE);
         response.addHeader(CONTENT_DISPOSITION_HEADER_KEY, CONTENT_DISPOSITION_HEADER_VALUE);

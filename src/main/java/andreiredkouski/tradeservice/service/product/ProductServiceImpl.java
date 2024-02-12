@@ -65,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(convertToProduct(csvRecord));
     };
 
-    private Product convertToProduct(CSVRecord csvRecord) {
+    private Product convertToProduct(final CSVRecord csvRecord) {
         return new Product(
                 Long.parseLong(csvRecord.get(ProductMetadata.PRODUCT_ID.value())),
                 csvRecord.get(ProductMetadata.PRODUCT_NAME.value())

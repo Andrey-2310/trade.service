@@ -57,7 +57,7 @@ public class TradeServiceImpl implements TradeService {
         return null;
     };
 
-    private TradeRequest getTradeRequest(CSVRecord csvRecord) {
+    private TradeRequest getTradeRequest(final CSVRecord csvRecord) {
         return new TradeRequest(
                 csvRecord.get(TradeRequestMetadata.DATE.value()),
                 Long.parseLong(csvRecord.get(TradeRequestMetadata.PRODUCT_ID.value())),
@@ -75,7 +75,7 @@ public class TradeServiceImpl implements TradeService {
         );
     }
 
-    private String getProductName(TradeRequest trade) {
+    private String getProductName(final TradeRequest trade) {
         return productService.findById(trade.productId())
                 .map(Product::name)
                 .orElseGet(() -> {

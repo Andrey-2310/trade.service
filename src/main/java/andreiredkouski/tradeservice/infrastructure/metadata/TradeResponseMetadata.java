@@ -8,7 +8,7 @@ public enum TradeResponseMetadata {
 
     private final String value;
 
-    TradeResponseMetadata(String value) {
+    TradeResponseMetadata(final String value) {
         this.value = value;
     }
 

@@ -24,13 +24,13 @@ public class CsvParserServiceImpl implements CsvParserService {
             .build();
 
     public void processCsvSource(final InputStreamSource source,
-                                 final Consumer<CSVRecord> consumer
+                                 final Consumer<CSVRecord> recordProcessor
     ) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(source.getInputStream()));
              CSVParser csvParser = CSV_FORMAT.parse(fileReader)
         ) {
             for (CSVRecord csvRecord : csvParser) {
-                consumer.accept(csvRecord);
+                recordProcessor.accept(csvRecord);
             }
         } catch (IOException e) {
             throw new CsvProcessingException(e.getMessage());
@@ -39,7 +39,7 @@ public class CsvParserServiceImpl implements CsvParserService {
 
     public void processCsvSourceWithTarget(final InputStreamSource source,
                                            final Appendable writer,
-                                           final Function<CSVRecord, CsvEntry> function,
+                                           final Function<CSVRecord, CsvEntry> recordProcessor,
                                            final Object[] headers
     ) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(source.getInputStream()));
@@ -48,7 +48,7 @@ public class CsvParserServiceImpl implements CsvParserService {
         ) {
             csvPrinter.printRecord(headers);
             for (CSVRecord csvRecord : csvParser) {
-                CsvEntry csvEntry = function.apply(csvRecord);
+                CsvEntry csvEntry = recordProcessor.apply(csvRecord);
                 if (csvEntry != null) {
                     csvEntry.print(csvPrinter);
                 }
