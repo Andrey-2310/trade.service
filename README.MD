@@ -47,13 +47,34 @@ In order to support large sets of trades, the following optimizations where done
 * .csv rows are not collected in the Java collections in order to avoid memory issues which might happen on a large scale.
 * On the final step, Trade with the Project Name is written directly into the output stream.
 
-### Optimizations for Products + scalability tricks
+### Optimizations for Products
 * Currently, Products are stored under Redis to perform `find by id` operation with time Complexity of O(1), instead of iterating over .csv file during each request.
 * The process of uploading Products into Redis is controlled by the following flags:
   * `redis.onstart.invalidate.products` - if set to `true`, all previous values will be invalidated.
   * `redis.onstart.update.products` - if set to `true`, current state of the products.csv (resources/static/) will be reflected in Redis.
-* If one instance of Redis won't be enough to support the given amount of the Products - multiple Redis server might be used.
+
+### Further optimizations
+#### Increasing the amount of Products
+If one instance of Redis won't be enough to support the given amount of the Products - multiple Redis server might be used.
   * In order to understand, which exact server stores the particular Product, `Consistent Hashing` technic might be used.
+  * In order not to lose the data once the particular server is down, `Data Replication` might be used.
+  * Data synchronization: Assuming the following,
+    * `N` - total number of replicas
+    * `W` - amount of replicas that should acknowledge Write operation
+    * `R` - amount of replicas that should acknowledge Read operation
+    
+    Then, according to `Quorum Consensus`, we should guarantee, that `W + R > N`. As soon as this application is mostly optimized
+for Read operations, we can configure `R = 1, W = N`
+
+#### Increase of incoming traffic
+If many users access the
+web server simultaneously and the server's load limit is reached, users generally
+experience slower response or fail to connect to the server. Using horizontal scaling along with load balancer might be a
+good technique to address these problems.
+
+#### Rate limiter
+In order to control the rate of traffic sent by a client, Rate Limiter might be used. It will limit the number of client requests allowed to be
+sent over a specified period.
 
 
 
