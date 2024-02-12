@@ -1,0 +1,20 @@
+spring:
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST:localhost}
+      port: ${SPRING_REDIS_PORT:6379}
+      password: ${SPRING_REDIS_PASSWORD:}
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+redis:
+  onstart:
+    invalidate:
+      products: "true"
+    update:
+      products: "true"
+products:
+  source:
+    path: static/products.csv
