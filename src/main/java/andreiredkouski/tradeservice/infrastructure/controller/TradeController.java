@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.controller;
+package andreiredkouski.tradeservice.infrastructure.controller;
 
 
 import andreiredkouski.tradeservice.service.trade.TradeService;

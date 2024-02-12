@@ -1,6 +1,6 @@
 package andreiredkouski.tradeservice.service.csv;
 
-import andreiredkouski.tradeservice.service.infrastructure.exception.CsvProcessingException;
+import andreiredkouski.tradeservice.infrastructure.exception.CsvProcessingException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.request;
+package andreiredkouski.tradeservice.infrastructure.request;
 
 import java.math.BigDecimal;
 

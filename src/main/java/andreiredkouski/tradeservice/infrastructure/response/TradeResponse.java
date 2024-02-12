@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.response;
+package andreiredkouski.tradeservice.infrastructure.response;
 
 import andreiredkouski.tradeservice.service.csv.CsvEntry;
 import java.io.IOException;

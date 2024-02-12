@@ -1,8 +1,8 @@
 package andreiredkouski.tradeservice.service.trade;
 
-import andreiredkouski.tradeservice.service.infrastructure.domain.Product;
-import andreiredkouski.tradeservice.service.infrastructure.metadata.TradeResponseMetadata;
-import andreiredkouski.tradeservice.service.infrastructure.response.TradeResponse;
+import andreiredkouski.tradeservice.infrastructure.domain.Product;
+import andreiredkouski.tradeservice.infrastructure.metadata.TradeResponseMetadata;
+import andreiredkouski.tradeservice.infrastructure.response.TradeResponse;
 import andreiredkouski.tradeservice.service.DateValidator;
 import andreiredkouski.tradeservice.service.csv.CsvEntry;
 import andreiredkouski.tradeservice.service.csv.CsvParserService;
@@ -16,10 +16,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.io.InputStreamSource;
-import static andreiredkouski.tradeservice.service.infrastructure.metadata.TradeRequestMetadata.CURRENCY;
-import static andreiredkouski.tradeservice.service.infrastructure.metadata.TradeRequestMetadata.DATE;
-import static andreiredkouski.tradeservice.service.infrastructure.metadata.TradeRequestMetadata.PRICE;
-import static andreiredkouski.tradeservice.service.infrastructure.metadata.TradeRequestMetadata.PRODUCT_ID;
+import static andreiredkouski.tradeservice.infrastructure.metadata.TradeRequestMetadata.CURRENCY;
+import static andreiredkouski.tradeservice.infrastructure.metadata.TradeRequestMetadata.DATE;
+import static andreiredkouski.tradeservice.infrastructure.metadata.TradeRequestMetadata.PRICE;
+import static andreiredkouski.tradeservice.infrastructure.metadata.TradeRequestMetadata.PRODUCT_ID;
 import static andreiredkouski.tradeservice.service.trade.TradeServiceImpl.DEFAULT_PRODUCT_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.exception;
+package andreiredkouski.tradeservice.infrastructure.exception;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;

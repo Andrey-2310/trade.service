@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.domain;
+package andreiredkouski.tradeservice.infrastructure.domain;
 
 import org.springframework.data.redis.core.RedisHash;
 

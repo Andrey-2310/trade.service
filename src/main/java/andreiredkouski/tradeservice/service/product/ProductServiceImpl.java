@@ -1,9 +1,9 @@
 package andreiredkouski.tradeservice.service.product;
 
-import andreiredkouski.tradeservice.service.infrastructure.domain.Product;
-import andreiredkouski.tradeservice.service.infrastructure.repository.ProductRepository;
+import andreiredkouski.tradeservice.infrastructure.domain.Product;
+import andreiredkouski.tradeservice.infrastructure.repository.ProductRepository;
 import andreiredkouski.tradeservice.service.csv.CsvParserService;
-import andreiredkouski.tradeservice.service.infrastructure.metadata.ProductMetadata;
+import andreiredkouski.tradeservice.infrastructure.metadata.ProductMetadata;
 import jakarta.annotation.PostConstruct;
 import java.util.Optional;
 import java.util.function.Consumer;

@@ -1,4 +1,4 @@
-package andreiredkouski.tradeservice.service.infrastructure.metadata;
+package andreiredkouski.tradeservice.infrastructure.metadata;
 
 public enum TradeResponseMetadata {
     DATE("date"),

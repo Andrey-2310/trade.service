@@ -1,14 +1,14 @@
 package andreiredkouski.tradeservice.service.trade;
 
-import andreiredkouski.tradeservice.service.infrastructure.domain.Product;
-import andreiredkouski.tradeservice.service.infrastructure.metadata.TradeResponseMetadata;
-import andreiredkouski.tradeservice.service.infrastructure.request.TradeRequest;
-import andreiredkouski.tradeservice.service.infrastructure.response.TradeResponse;
+import andreiredkouski.tradeservice.infrastructure.domain.Product;
+import andreiredkouski.tradeservice.infrastructure.metadata.TradeResponseMetadata;
+import andreiredkouski.tradeservice.infrastructure.request.TradeRequest;
+import andreiredkouski.tradeservice.infrastructure.response.TradeResponse;
 import andreiredkouski.tradeservice.service.DateValidator;
 import andreiredkouski.tradeservice.service.csv.CsvParserService;
 import andreiredkouski.tradeservice.service.csv.CsvEntry;
 import andreiredkouski.tradeservice.service.product.ProductService;
-import andreiredkouski.tradeservice.service.infrastructure.metadata.TradeRequestMetadata;
+import andreiredkouski.tradeservice.infrastructure.metadata.TradeRequestMetadata;
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
